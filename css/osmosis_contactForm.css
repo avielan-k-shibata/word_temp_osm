@@ -1,0 +1,251 @@
+
+div.leftmenu2018 {
+  display: none;
+}
+#primary{
+  width: 100% !important;
+}
+.flex_c_c{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+div.contactForm{
+  width: 100%;
+  display: flex;
+}
+
+
+
+div.contact_form{
+  display: flex;
+  width: 760px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 770px){
+  div.contact_form{
+    width: 100%;
+  }
+}
+div.contact_form input[type="text"], div.contact_form input[type="email"], div.contact_form input[type="tel"], div.contact_form input[type="number"], div.contact_form input[type="password"], div.contact_form input[type="textarea"], div.contact_form textarea, div.contact_form select{
+	padding: 7px 11px 7px 11px;
+	border: 2px solid #EAEAEA;
+	background: #FFF;
+  max-width: 100%;
+  width: 100%;
+}
+div.contact_form p{
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+div.contact_form div.title_area{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: rgba(0,0,0,0.7);
+  padding: 32px 0;
+  border-top: 1px solid rgba(0,0,0,0.7);
+}
+
+div.contact_form div.title_area p{
+  color: #fff;
+  font-size: 14px;
+}
+div.contact_form div.title_area p span{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: #c00000;
+  margin-top: 4px;
+}
+
+div.contact_form div.form_area{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  padding: 32px;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+div.contact_form div.form_area.last_area{
+  border-bottom: 1px solid #ddd;
+
+}
+div.contact_form div.form_area.post_area label{
+  width: 150px;
+  margin-right: 8px;
+}
+div.contact_form div.form_area.post_area label:nth-child(2){
+  width: 150px;
+  margin-left: 8px;
+}
+div.contact_form div.form_area.radio_area label{
+  display: flex;
+  align-items: center;
+}
+div.contact_form div.form_area.radio_area label span{
+  display: inline-block;
+  margin-left: 8px;
+}
+
+div.form_area span.wpcf7-form-control-wrap span.imagcheckbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.form_area span.wpcf7-form-control-wrap span.imagcheckbox br {
+  display: none;
+}
+
+div.form_area span.wpcf7-form-control-wrap span.imagcheckbox p br {
+  display: block;
+}
+
+div.form_area span.wpcf7-form-control-wrap span.imagcheckbox span.wpcf7-list-item {
+  width: calc(100% / 3);
+  margin: 0%;
+  padding: 1.5%;
+}
+@media screen and (max-width: 640px){
+  div.form_area span.wpcf7-form-control-wrap span.imagcheckbox span.wpcf7-list-item {
+    width: calc(100% / 2);
+  }
+}
+div.form_area span.wpcf7-form-control-wrap span.imagcheckbox span.wpcf7-list-item label {
+  margin: 0%;
+  background: rgb(102, 102, 102);
+}
+div.form_area span.wpcf7-form-control-wrap span.imagcheckbox span.wpcf7-list-item label input {
+  display: none;
+}
+
+div.form_area span.wpcf7-form-control-wrap span.imagcheckbox span.wpcf7-list-item label input[type=checkbox]:checked + span {
+opacity: 0.5;
+transition: 1s;
+}
+div.contact_form div.padding1 {
+  padding: 2%;
+}
+@media screen and (max-width: 770px){
+  div.contact_form div.title_area{
+    width: 100%;
+    padding: 16px;
+  }
+  div.contact_form div.form_area{
+    width: 100%;
+    padding: 16px;
+    border-left: 1px solid #ddd;
+  }
+}
+div.contact_form div.form_area.name_area p{
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 16px;
+}
+div.contact_form div.form_area.name_area p > span:nth-of-type(1){
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+div.contact_form div.form_area.name_area p > span:nth-of-type(2){
+  width: 80%;
+  display: block;
+}
+div.contact_form div.form_area.name_area p > span:nth-of-type(3){
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  padding-left: 20%;
+  margin-top: 8px;
+}
+
+div.contact_form div.form_area.text_area p{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 8px;
+}
+div.contact_form div.form_area.text_area p > span:nth-of-type(1){
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+div.contact_form div.form_area.text_area p > span:nth-of-type(2){
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  margin-top: 8px;
+}
+div.contact_form div.form_area.check_area{
+  border-bottom: 1px solid #ddd;
+}
+div.contact_form div.form_area.check_area p{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+div.contact_form div.form_area.check_area p span.wpcf7-list-item {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+div.contact_form div.form_area.check_area p span.wpcf7-list-item input{
+  margin-right: 8px;
+}
+
+div.submit_area{
+  width: 100%;
+  margin: 64px auto;
+}
+div.submit_area p input{
+  background: rgba(0,0,0,0.87);
+  border: 1px solid rgba(0,0,0,0.87);
+  color: #fff;
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 8px 32px 10px;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .4s;
+  margin: 0;
+  line-height: normal;
+}
+div.submit_area p input:hover{
+  background: #fff;
+  color: rgba(0,0,0,0.87);
+}
+div.contact_form div.title{
+  padding: 32px 0;
+  width: 100%;
+}
+div.contact_form div.title h2{
+  margin: 0;
+  padding: 8px 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  border-bottom: 2px solid rgba(0,0,0,0.87);
+}
+div.contact_form div.title p{
+  margin: 16px 0 0 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 28px;
+}
+
+div.contact_form div.questionnaire label{
+  display: flex;
+  align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
+  margin-right: 16px;
+} 
+div.contact_form div.questionnaire label input{
+  margin-right: 4px;
+}
