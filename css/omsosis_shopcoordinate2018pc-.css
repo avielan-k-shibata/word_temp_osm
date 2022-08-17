@@ -14,8 +14,6 @@ padding: 0;
 background-color: #efefef;
 }
 *,*:after,*:before{
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
 box-sizing: border-box;
 }
 div.test{
@@ -166,8 +164,7 @@ width: 12px;
 height: 12px;
 border-top: 1px solid #4f4f4f;
 border-right: 1px solid #4f4f4f;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 ul.sp-menu2018 li p{
@@ -181,7 +178,7 @@ font-size: 12px;
 color: #c00000;
 }
 
-/* ‰ïˆõƒXƒe[ƒW‚ª‚ ‚éê‡‚Ì‚İ•\¦ */
+/* ï¿½ï¿½ï¿½ï¿½Xï¿½eï¿½[ï¿½Wï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡ï¿½Ì‚İ•\ï¿½ï¿½ */
 .FS2_repeater{
 padding:8px;
 }
@@ -197,14 +194,14 @@ font-size: 13px;
     display:none;
 
 }
-/* ”ñ‰ïˆõ‚É‚Íƒ|ƒCƒ“ƒgî•ñ‚ğ”ñ•\¦ */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½É‚Íƒ|ï¿½Cï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½\ï¿½ï¿½ */
 .FS2_repeater .point_ {
     display:block;
 }
 .FS2_repeater .point_guest {
     display:none;
 }
-/* ƒN[ƒ|ƒ“‚ª‚ ‚éê‡‚Ì‚İ•\¦ */
+/* ï¿½Nï¿½[ï¿½|ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‡ï¿½Ì‚İ•\ï¿½ï¿½ */
 .FS2_repeater .coupon_true {
     display:block; 
 }
@@ -338,8 +335,7 @@ width: 15px;
 height: 15px;
 border-bottom: 2px solid #fff;
 border-right: 2px solid #fff;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 span.stylebook p{
 position: absolute;
@@ -358,15 +354,10 @@ height: 64px;
 ul.sp-headermenu2 {
 width: 100%;
 padding:64px 0 7px 0;
-display: -webkit-box;
-display: -moz-box;
 display: -webkit-flexbox;
 display: -moz-flexbox;
-display: -ms-flexbox;
-display: -webkit-flex;
 display: -moz-flex;
 display: flex;
--webkit-justify-content: center;
 -moz-justify-content: center;
 justify-content: center;
 
@@ -630,8 +621,7 @@ width: 10px;
 height: 10px;
 border-top: 1px solid #ddd;
 border-right: 1px solid #ddd;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 div.footer2018 ul li a:hover:after{
 border-top: 1px solid #4f4f4f;
@@ -639,15 +629,10 @@ border-right: 1px solid #4f4f4f;
 }
 div.footer2018 ul li.sns{
 float: none;
-display: -webkit-box;
-display: -moz-box;
 display: -webkit-flexbox;
 display: -moz-flexbox;
-display: -ms-flexbox;
-display: -webkit-flex;
 display: -moz-flex;
 display: flex;
--webkit-justify-content: center;
 -moz-justify-content: center;
 justify-content: center;
 border: none;
@@ -1026,7 +1011,6 @@ div.blog-banner2018 button.slick-prev:before{
 position: absolute;
 border-bottom: solid 2px #4f4f4f;
 border-left: solid 2px #4f4f4f;
--webkit-transform: rotate(45deg);
 transform: rotate(45deg);
 content: '';
 width: 20px;
@@ -1041,7 +1025,6 @@ div.blog-banner2018 button.slick-next:before{
 position: absolute;
 border-top: solid 2px #4f4f4f;
 border-right: solid 2px #4f4f4f;
--webkit-transform: rotate(45deg);
 transform: rotate(45deg);
 content: '';
 width: 20px;
@@ -1151,10 +1134,10 @@ margin-top: -5px !important;
 .main-navigation{
 display: none;
 }
-/* media ƒgƒW */
+/* media ï¿½gï¿½W */
 }
 
-/* Ú×ƒy[ƒW@ƒAƒCƒeƒ€ */
+/* ï¿½Ú×ƒyï¿½[ï¿½Wï¿½@ï¿½Aï¿½Cï¿½eï¿½ï¿½ */
 
 ul.coordinateitem{
 width: 100%;
@@ -1296,7 +1279,6 @@ display: none;
     height: 15px;
     border-left: 2px solid #fff;
     position: absolute;
-    -webkit-transform: rotate(45deg);
 transform: rotate(45deg);
 top: 19px;
 left: 15px;
@@ -1308,7 +1290,6 @@ left: 15px;
     height: 15px;
     border-right: 2px solid #fff;
     position: absolute;
-    -webkit-transform: rotate(45deg);
 transform: rotate(45deg);
 top: 19px;
 right: 15px;

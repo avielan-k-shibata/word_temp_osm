@@ -1,0 +1,37 @@
+div.styling_contents {
+  width: 100%;
+  margin: 0 auto;
+  background: #efefef;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+div.styling_contents .contents_area {
+  margin-top: 32px;
+  width: calc(100% - 280px);
+  min-height: 50vh;
+}
+
+div#headermenu {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+div.leftmenu2018 {
+  width: 280px;
+  padding: 0 32px;
+  margin-top: 32px;
+}
+
+div.leftmenu2018 ul {
+  padding: 0;
+}
+
+div.leftmenu2018 ul li {
+  margin: 0 0 32px 0;
+}
+/*# sourceMappingURL=styling.css.map */

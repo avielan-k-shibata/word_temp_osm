@@ -1,0 +1,70 @@
+$contentsName: ".styling_contents";
+
+$efont: 'Josefin Sans';
+$efont2: 'Sen', sans-serif;
+
+$jfont: 'Noto Sans JP', sans-serif;
+$jfont2: 'Zen Antique Soft', serif;
+
+$pc: 1024px; // pc
+$tab_float: 1080px; // タブレット横
+$tab: 810px; // タブレット
+$sp: 640px; // スマホ
+$slick: item_slick;
+
+$pc_padding: 48px;
+$tab_padding: 24px;
+$sp_padding: 24px;
+$pc_margin: 32px;
+@mixin pc {
+    @media (max-width: ($pc)) {
+        @content;
+    }
+}
+@mixin tab_float {
+    @media (max-width: ($tab_float)) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (max-width: ($tab)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+div#{$contentsName}{
+    width: 100%;
+    margin: 0 auto;
+    background: #efefef;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    .contents_area{
+        margin-top: $pc_margin;
+        width: calc(100% - 280px);
+        min-height: 50vh;
+    }
+}
+div#headermenu{
+    position: -webkit-sticky;
+    position: sticky;
+
+}
+div.leftmenu2018{
+    width: 280px;
+    padding: 0 $pc_margin;
+    margin-top: $pc_margin;
+    ul{
+        padding: 0;
+        li{
+            margin: 0 0 $pc_margin 0;
+        }
+    }
+}
