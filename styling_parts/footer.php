@@ -33,6 +33,9 @@
             <li class="spase"></li>
         </ul>
     </div>
+    </div><!--//styling_contents-->
+    <?php get_template_part('styling_parts/drawer'); ?>
+</div><!--//main_conteiner-->
 <?php wp_footer(); ?>
 </body>
 

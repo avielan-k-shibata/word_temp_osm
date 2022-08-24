@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="/company/wp-content/themes/gk-portfolio/css/omsosis_shopcoordinate2018-.css" />
     <link rel="stylesheet" type="text/css" href="/company/wp-content/themes/gk-portfolio/css/omsosis_shopcoordinate2018pc-.css" />
     <link rel="stylesheet" type="text/css" href="/company/wp-content/themes/gk-portfolio/css/styling.css" />
+    <script src="/company/wp-content/themes/gk-portfolio/js/styling.js"></script>
+	<script src="https://osmosis.itembox.design/item/js/scroll.js"></script>
+
     <script src="https://c18.future-shop.jp/shop/js/fs2api.js"></script>
     <script type="text/javascript">
         FS2.repeater({
@@ -46,26 +49,38 @@
 </head>
 
 <body>
+<div class="main_container">
+    <div class="styling_contents">
+        <div id="sp-headermenu" class="sp">
+            <button type="button" class="drawer-toggle drawer-hamburger drawer-button">
+                <span class="sr-only">toggle navigation</span>
+                <span class="drawer-hamburger-icon"></span>
+            </button>
+            <h1 class="logo"><a href="/sp"><img src="/company/wp-content/themes/gk-portfolio/img/top/logo.png" alt="OSMOSIS loaf" /></a></h1>
 
-<div class="styling_contents">
-    <div id="headermenu" class="pc">
-        <ul>
-            <li>
-                <h1 class="logo"><a href="/"><img src="/company/wp-content/themes/gk-portfolio/img/top/logo.png" alt="OSMOSISs loaf" /></a></h1>
-            </li>
-            <li class="search2018">
-                <form action="/p/search" method="get">
-                    <div class="form-group">
-                        <input type="text" name="keyword" class="form-control" placeholder="検索キーワード">
-                    </div>
-                    <button type="submit" class="btn btn-default">検索</button>
-                </form>
-            </li>
-            <li class="menbermenu2018">
-                <a class="help1" href="/fs/osmosis/c/guide">ご利用ガイド</a>
-                <a class="member" href="/fs/osmosis/MyPageTop.html">マイページ</a>
-                <a class="login" href="/fs/osmosis/Login.html">ログイン</a>
-                <a class="cart" href="/fs/osmosis/ShoppingCart.html">カート</a>
-            </li>
-        </ul>
-    </div>
+            <div class="cart2018">
+                <a href="/fs/osmosis/ShoppingCart.html"><img src="/company/wp-content/themes/gk-portfolio/img/top/cart.png" alt="OSMOSIS loaf" /></a>
+            </div>
+        </div>
+        <div id="headermenu" class="pc">
+            <ul>
+                <li>
+                    <h1 class="logo"><a href="/"><img src="/company/wp-content/themes/gk-portfolio/img/top/logo.png" alt="OSMOSISs loaf" /></a></h1>
+                </li>
+                <li class="search2018">
+                    <form action="/p/search" method="get">
+                        <div class="form-group">
+                            <input type="text" name="keyword" class="form-control" placeholder="検索キーワード">
+                        </div>
+                        <button type="submit" class="btn btn-default">検索</button>
+                    </form>
+                </li>
+                <li class="menbermenu2018">
+                    <a class="help1" href="/fs/osmosis/c/guide">ご利用ガイド</a>
+                    <a class="member" href="/fs/osmosis/MyPageTop.html">マイページ</a>
+                    <a class="login" href="/fs/osmosis/Login.html">ログイン</a>
+                    <a class="cart" href="/fs/osmosis/ShoppingCart.html">カート</a>
+                </li>
+            </ul>
+        </div>
+        <div class="ovserber_target"></div>

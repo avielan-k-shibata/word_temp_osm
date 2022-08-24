@@ -6,7 +6,7 @@ $efont2: 'Sen', sans-serif;
 $jfont: 'Noto Sans JP', sans-serif;
 $jfont2: 'Zen Antique Soft', serif;
 
-$pc: 1024px; // pc
+$pc: 1200px; // pc
 $tab_float: 1080px; // タブレット横
 $tab: 810px; // タブレット
 $sp: 640px; // スマホ
@@ -48,14 +48,312 @@ div#{$contentsName}{
     flex-wrap: wrap;
     .contents_area{
         margin-top: $pc_margin;
+        // overflow: hidden;
         width: calc(100% - 280px);
         min-height: 50vh;
+        &.styling_detail_page{
+            margin-top: 0;
+            width: 100%;
+
+        }
+        @include tab{
+            width: 100%;
+            margin-top: 0;
+
+        }
+        p{
+            margin: 0;
+            padding: 0;
+        }
+        .style_title{
+            h2{
+                margin: 0 0 32px 0;
+                padding: 16px;
+                background: #fff;
+                @include tab{
+                    margin: 0 0 24px 0;
+                    padding: 12px;
+                }
+                @include sp{
+                    margin: 0 0 16px 0;
+                    padding: 8px;
+                }
+            }
+        }
+        .archive_area{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            @include tab{
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+
+            }
+            @include sp{
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .styling_card{
+                // width: 25%;
+                opacity: 0;
+                transition: .8s;
+                position: relative;
+                transform: translateY(20px);
+                &.style1{
+                    transition-delay: 0s;
+                }
+                &.style2{
+                    transition-delay: 0.2s;
+                }
+                &.style3{
+                    transition-delay: 0.4s;
+                    @include sp{
+                        transition-delay: 0s;
+                    }
+                }
+                &.style4{
+                    transition-delay: 0.8s;
+                    @include sp{
+                        transition-delay: 0.2s;
+                    }
+                }
+                &:nth-child(1){
+                    grid-column: 1 / 3;
+                    grid-row: 1 / 3;
+                }
+                a{
+                    display: flex;
+                    span{
+                        &:nth-child(1){
+                            overflow: hidden;
+                        }
+                        img{
+                            width: 100%;
+                            transition: .4s;
+                        }
+                    }
+                    &:hover{
+                        span{
+                            img{
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+                &.inview{
+                    opacity: 1;
+                    transform: translateY(0);
+
+                }
+                div.style_tags{
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    display: flex;
+                    padding: 2px;
+                    p{
+                        padding: 2px;
+
+                        a{
+                            &::before{
+                                content: "#";
+                                display: inline-block;
+                                margin-right: 2px;
+                            }
+                            display: inline-block;
+                            border-radius: 12px;
+                            background: #fff;
+                            padding: 2px 8px;
+                            color: rgba(0,0,0,.7);
+                            font-size: 12px;
+                            transition: .4s;
+                            &:hover{
+                                background: #000;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .style_area{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 24px 0;
+        @include tab{
+            margin: 0;
+
+        }
+        .image_area{
+            width: calc(100% - 360px);
+            @include tab{
+                width: 100%;
+                overflow-x: scroll;
+            }
+            .image_box{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+                @include pc{
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                @include tab{
+                    display: flex;
+                    flex-wrap: nowrap;
+                    padding: 8px;
+                    gap: 0;
+
+                    @for $i from 1 through 12 {
+                        &.width_#{$i} { width: 80% * $i; }
+                     }
+                }
+                img{
+                    width: 100%;
+                }
+                > div{
+                    @include tab{
+                        padding: 8px;
+                    }
+                }
+            }
+        }          
+        .item_area{
+            width: 360px;
+            padding: 0 0 0 24px;
+            @include tab{
+                width: 100%;
+                padding: 0px 16px 16px;
+            }
+            .pankz{
+                display: flex;
+                p{
+                    a{
+                        display: inline-flex;
+                        align-items: center;
+                        &::after{
+                            content: ">";
+                            display: inline-block;
+                            margin: 0 4px;
+                        }
+                    }
+                }
+            }
+            h2{
+                margin: 12px 0;
+                @include tab{
+                    margin: 4px 0;
+                }
+            }
+            .item_credit{
+                position: -webkit-sticky;
+                position: sticky;
+                top: 90px;
+                left: 0;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+                @include tab{
+                    grid-template-columns: repeat(3, 1fr);
+                }
+                @include sp{
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                p{
+                    a{
+                        background: #fff;
+                        display: block;
+                        padding: 0 12px 12px;
+                    }
+                }
+            }
+            .style_tags{
+                display: flex;
+                margin-bottom: 24px;
+                p{
+                    padding: 2px;
+
+                    a{
+                        &::before{
+                            content: "#";
+                            display: inline-block;
+                            margin-right: 2px;
+                        }
+                        display: inline-block;
+                        border-radius: 12px;
+                        background: #fff;
+                        padding: 2px 8px;
+                        color: rgba(0,0,0,.7);
+                        font-size: 12px;
+                        transition: .4s;
+                        &:hover{
+                            background: #000;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .other_area{
+        @include tab{
+            width: 100%;
+            overflow-x: scroll;
+        }
+        h2{
+            border-top: 1px solid #ddd;
+            margin: 0;
+            position: relative;
+            padding: 24px;
+            font-size: 20px;
+            text-align: center;
+            &:after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: #fff;
+            }
+        }
+        .other_box{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 24px;
+            @include tab{
+                @for $i from 1 through 12 {
+                    &.other-#{$i} { width: 40% * $i; }
+                 }
+                display: flex;
+            }
+            a{
+                transition: .4s;
+                span{
+                    display: block;
+                    overflow: hidden;
+                }
+                img{
+                    transition: .4s;
+                }
+                &:hover{
+                    img{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
     }
 }
-div#headermenu{
+div#headermenu, #sp-headermenu{
     position: -webkit-sticky;
     position: sticky;
-
+    transition: .4s;
+}
+div.head_shadow_line{
+    div#headermenu, #sp-headermenu{
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 }
 div.leftmenu2018{
     width: 280px;
@@ -67,4 +365,57 @@ div.leftmenu2018{
             margin: 0 0 $pc_margin 0;
         }
     }
+    @include tab{
+        display: none;
+    }
+}
+
+div.drawerbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-120%);
+    width: 280px;
+    height: 120vh;
+    overflow-y: scroll;
+    transition: .8s;
+    z-index: 3;
+    nav{
+        width: 280px;
+        background: #fff;
+        ul{
+            position: relative;
+            z-index: 2;
+        }
+    }
+}
+div.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120vh;
+    background: rgba(0,0,0,.4);
+    z-index: 2;
+    transform: translateX(-120%);
+    transition: .8s;
+
+}
+div.main_container.open{
+    div.drawerbox, div.overlay{
+        transform: translateX(0%);
+
+    }
+}
+
+div.ovserber_target{
+    width: 100%;
+    height: 0;
+}
+
+div.footer2018 ul{
+    @include pc{
+        width: 100%;
+    }
+
 }

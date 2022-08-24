@@ -1,8 +1,5 @@
 <?php
 
-/**
- * The template for displaying all single posts
- */
 
 ?>
 <?php get_template_part('styling_parts/header'); ?>
@@ -12,7 +9,7 @@
 
 	<div class="contents_area">
 		<div class="style_title">
-			<h2>RECOMMEND STYLE</h2>
+			<h2>MODEL: <span><?php echo  single_term_title();?></span></h2>
 		</div>
 		<div class="archive_area">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

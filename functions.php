@@ -502,7 +502,7 @@ function create_styling_type() {
   );
 
   register_taxonomy(
-    'styling-model',
+    'styling_model',
     'styling',
     array(
       'label' => 'モデル',
@@ -511,12 +511,21 @@ function create_styling_type() {
       'show_in_rest' => true,
     )
   );
-
   register_taxonomy(
-    'styling-tag',
+    'styling_season',
     'styling',
     array(
-      'label' => 'モデルタグ',
+      'label' => 'シーズン',
+      'hierarchical' => true,
+      'public' => true,
+      'show_in_rest' => true,
+    )
+  );
+  register_taxonomy(
+    'styling_tag',
+    'styling',
+    array(
+      'label' => 'スタイリングタグ',
       'hierarchical' => false,
       'public' => true,
       'show_in_rest' => true,
