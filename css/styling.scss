@@ -6,6 +6,7 @@ $efont2: 'Sen', sans-serif;
 $jfont: 'Noto Sans JP', sans-serif;
 $jfont2: 'Zen Antique Soft', serif;
 
+$pc_w: 1400px;
 $pc: 1200px; // pc
 $tab_float: 1080px; // タブレット横
 $tab: 810px; // タブレット
@@ -16,6 +17,11 @@ $pc_padding: 48px;
 $tab_padding: 24px;
 $sp_padding: 24px;
 $pc_margin: 32px;
+@mixin pc_w {
+    @media (max-width: ($pc_w)) {
+        @content;
+    }
+}
 @mixin pc {
     @media (max-width: ($pc)) {
         @content;
@@ -82,12 +88,17 @@ div#{$contentsName}{
         }
         .archive_area{
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             gap: 32px;
+            @include pc_w{
+                grid-template-columns: repeat(5, 1fr);
+            }
+            @include pc{
+                grid-template-columns: repeat(4, 1fr);
+            }
             @include tab{
                 grid-template-columns: repeat(3, 1fr);
                 gap: 24px;
-
             }
             @include sp{
                 grid-template-columns: repeat(2, 1fr);
@@ -120,6 +131,18 @@ div#{$contentsName}{
                 &:nth-child(1){
                     grid-column: 1 / 3;
                     grid-row: 1 / 3;
+                }
+                &:nth-child(10){
+                    grid-column: 3 / 5;
+                    grid-row: 3 / 5;
+                    @include tab{
+                        grid-column: 2 / 4;
+                        grid-row: 5 / 7;
+                    }
+                    @include sp{
+                        grid-column: 1 / 3;
+                        grid-row: 5 / 7;
+                    }
                 }
                 a{
                     display: flex;
@@ -225,16 +248,35 @@ div#{$contentsName}{
                 width: 100%;
                 padding: 0px 16px 16px;
             }
+            @include sp{
+                padding: 0px 0px 16px 0;
+
+            }
             .pankz{
                 display: flex;
+                flex-wrap: wrap;
+                @include sp{
+                    flex-wrap: nowrap;
+                    width: 100%;
+                    overflow-x: scroll;
+                    padding-left: 16px;
+                }
                 p{
+                    @include sp{
+                        white-space: nowrap
+                    }
                     a{
                         display: inline-flex;
                         align-items: center;
+                    }
+                    &::after{
+                        content: ">";
+                        display: inline-block;
+                        margin: 0 4px;
+                    }
+                    &:last-child{
                         &::after{
-                            content: ">";
-                            display: inline-block;
-                            margin: 0 4px;
+                            content: "";
                         }
                     }
                 }
@@ -243,6 +285,9 @@ div#{$contentsName}{
                 margin: 12px 0;
                 @include tab{
                     margin: 4px 0;
+                }
+                @include sp{
+                    padding: 0 0 0 16px;
                 }
             }
             .item_credit{
@@ -270,6 +315,13 @@ div#{$contentsName}{
             .style_tags{
                 display: flex;
                 margin-bottom: 24px;
+                flex-wrap: wrap;
+                @include sp{
+                    padding: 0 0 0 16px;
+                    flex-wrap: nowrap;
+                    width: 100%;
+                    overflow-x: scroll;
+                }
                 p{
                     padding: 2px;
 
@@ -295,27 +347,39 @@ div#{$contentsName}{
             }
         }
     }
+    h2.other_title{
+        border-top: 1px solid #ddd;
+        margin: 0;
+        position: relative;
+        padding: 24px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include sp{
+            flex-wrap: wrap;
+            padding: 12px ;
+            font-size: 18px;
+        }
+        span{
+            font-size: 12px;
+            display: inline-block;
+            margin-left: 16px;
+        }
+        &:after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #fff;
+        }
+    }
     .other_area{
         @include tab{
             width: 100%;
             overflow-x: scroll;
-        }
-        h2{
-            border-top: 1px solid #ddd;
-            margin: 0;
-            position: relative;
-            padding: 24px;
-            font-size: 20px;
-            text-align: center;
-            &:after{
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 1px;
-                background: #fff;
-            }
         }
         .other_box{
             display: grid;
@@ -323,12 +387,13 @@ div#{$contentsName}{
             gap: 24px;
             @include tab{
                 @for $i from 1 through 12 {
-                    &.other-#{$i} { width: 40% * $i; }
+                    &.other_#{$i} { width: 35% * $i; }
                  }
                 display: flex;
             }
             a{
                 transition: .4s;
+                height: 100%;
                 span{
                     display: block;
                     overflow: hidden;

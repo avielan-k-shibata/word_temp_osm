@@ -532,5 +532,15 @@ function create_styling_type() {
       'update_count_callback' => '_update_post_term_count',
     )
   );
-
+  register_taxonomy(
+    'styling_tag2',
+    'styling',
+    array(
+      'label' => '商品・納期タグ',
+      'hierarchical' => false,
+      'public' => true,
+      'show_in_rest' => true,
+      'update_count_callback' => '_update_post_term_count',
+    )
+  );
 }

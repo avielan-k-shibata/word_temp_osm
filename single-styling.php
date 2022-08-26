@@ -6,7 +6,7 @@
 $items = SCF::get('item_detail');
 $image_directory = SCF::get('image_directory');
 $style_images = SCF::get('style_images');
-$item_html = SCF::get('item_html');
+$item_html = SCF::get('item_html2');
 
 $postid = get_the_ID();
 $tarms = get_the_terms($postid, 'styling_model');
@@ -63,29 +63,36 @@ $tags = get_the_terms($postid, 'styling_tag');
 		</div>
 	</div>
 
-	<div class="other_area">
-		<h2>OTHER STYLING</h2>
-			<?php
-				$other_styles = new WP_Query(
+	<?php
+		$other_tarms = get_the_terms($postid, 'styling_tag2');
+		$other_tmid = [];
+		foreach($other_tarms as $tm){
+			$other_tmid[] = $tm->term_id;
+		}
+		$other_styles = new WP_Query(
+			array(
+				'post__not_in' => array($post->ID),
+				'post_type' => 'styling',
+				'posts_per_page' => 5,
+				'tax_query' => array(
 					array(
-						'post__not_in' => array($post->ID),
-						'post_type' => 'styling',
-						'posts_per_page' => 5,
-						'tax_query' => array(
-							array(
-								'taxonomy' => 'styling_model',
-								'terms' => array($tarmid),
-							),
-						),
-					)
-				);?>
-			<div class="other_box other<?php echo $other_styles->current_post?>">
-			<?php if ( $other_styles->have_posts() ) :?>
-				<div>
-					<?php while ( $other_styles->have_posts() ) : $other_styles->the_post();
+						'taxonomy' => 'styling_tag2',
+						'terms' => $other_tmid,
+					),
+				),
+			)
+		);?>
+	<?php if ( $other_styles->have_posts() ) :?>
+
+	<h2 class="other_title">OTHER STYLING <span>-同じアイテムを使ったスタイル-</span></h2>
+	<div class="other_area">
+
+			<div class="other_box other_<?php echo $other_styles->post_count?>">
+				<?php while ( $other_styles->have_posts() ) : $other_styles->the_post();
 					$otherstyle_image = SCF::get('image_directory');
 					$otherimg_link = 'https://osmosis.itembox.design/item/img/' . $otherstyle_image . '/1.jpg';
 					?>
+					<div>
 						<a href="<?php the_permalink(); ?>">
 							<?php if (has_post_thumbnail()) : ?>
 								<span><img src="<?php the_post_thumbnail_url('large'); ?>"></span>
@@ -93,11 +100,11 @@ $tags = get_the_terms($postid, 'styling_tag');
 								<span><img src="<?php echo $otherimg_link?>"></span>
 							<?php endif; ?>
 						</a>
-					<?php endwhile; ?>
-				</div>
-			<?php endif; wp_reset_postdata(); ?>
-		</div>
+					</div>
+				<?php endwhile; ?>
+			</div>
 	</div>
+	<?php endif; wp_reset_postdata(); ?>
 </div>
 
 
