@@ -35,5 +35,20 @@ window.addEventListener("load", function () {
     closeBtn.addEventListener("click", function () {
         container.classList.remove("open")
     })
+
+
+    //item_credit 追加ボタン
+    const item_credits = document.querySelectorAll(".item_credit p");
+    if(item_credits){
+        item_credits.forEach(p => {
+            const a = p.childNodes;
+            console.log(a[0].pathname.substr(-10));
+            var new_element = document.createElement('a');
+            new_element.textContent = 'OTHER STYLES';
+            const url = `/shopcoordinate/index.php/styling_items/${a[0].pathname.substr(-11)}/`
+            new_element.setAttribute('href', url);
+            p.appendChild(new_element);
+        });
+    }
 });
 //drawer

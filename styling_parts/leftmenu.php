@@ -3,6 +3,15 @@
 <div class="leftmenu2018 pc">
 	<ul>
 		<li>
+			<p>RECOMMEND STYLE</p>
+			<a href="/shopcoordinate/">RECOMMEND TOP</a>
+			<a href="/shopcoordinate/">LOOK BOOK</a>
+			<a href="/shopcoordinate/">CATALOG</a>
+			<p>MODEL</p>
+			<a href="/shopcoordinate/">OZAWA</a>
+			
+		</li>
+		<li>
 			<p>SHOP COORDINATE</p>
 			<a href="/shopcoordinate/">COORDINATE TOP</a>
 			<a href="/shopcoordinate/index.php/category/height/155under/">155cm UNDER</a>

@@ -35,7 +35,7 @@ $tags = get_the_terms($postid, 'styling_tag');
 		</div>
 		<div class="item_area">
 			<div class="pankz">
-				<p><a href="/styling">STYLING TOP</a></p>
+				<p><a href="<?php echo esc_url(home_url()); ?>/index.php/styling/">STYLING TOP</a></p>
 				<p><a href="<?php echo get_tag_link($tarmid) ?>"><?php echo $tarms[0]->name?></a></p>
 				<p><?php echo the_title()?></p>
 			</div>
@@ -64,7 +64,7 @@ $tags = get_the_terms($postid, 'styling_tag');
 	</div>
 
 	<?php
-		$other_tarms = get_the_terms($postid, 'styling_tag2');
+		$other_tarms = get_the_terms($postid, 'styling_items');
 		$other_tmid = [];
 		foreach($other_tarms as $tm){
 			$other_tmid[] = $tm->term_id;
@@ -76,7 +76,7 @@ $tags = get_the_terms($postid, 'styling_tag');
 				'posts_per_page' => 5,
 				'tax_query' => array(
 					array(
-						'taxonomy' => 'styling_tag2',
+						'taxonomy' => 'styling_items',
 						'terms' => $other_tmid,
 					),
 				),
@@ -104,6 +104,7 @@ $tags = get_the_terms($postid, 'styling_tag');
 				<?php endwhile; ?>
 			</div>
 	</div>
+
 	<?php endif; wp_reset_postdata(); ?>
 </div>
 

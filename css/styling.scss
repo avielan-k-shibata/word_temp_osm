@@ -88,7 +88,7 @@ div#{$contentsName}{
         }
         .archive_area{
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 32px;
             @include pc_w{
                 grid-template-columns: repeat(5, 1fr);
@@ -142,6 +142,18 @@ div#{$contentsName}{
                     @include sp{
                         grid-column: 1 / 3;
                         grid-row: 5 / 7;
+                    }
+                }
+                &:nth-child(20){
+                    grid-column: 4 / 6;
+                    grid-row: 5 / 7;
+                    @include tab{
+                        grid-column: 1 / 3;
+                        grid-row: 9 / 11;
+                    }
+                    @include sp{
+                        grid-column: 1 / 3;
+                        grid-row: 9 / 11;
                     }
                 }
                 a{
@@ -199,6 +211,41 @@ div#{$contentsName}{
                 }
             }
         }
+        div.pagenation{
+            padding: 24px 0;
+            div.nav-links{
+                ul.page-numbers{
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    padding: 8px;
+                    li{
+                        padding: 8px;
+                        a, span{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 48px;
+                            height: 48px;
+                            border: 1px solid rgba(0,0,0,.7);
+                        }
+                        span{
+                            color: #fff;
+                            background: rgba(0,0,0,.7);
+                        }
+                        a{
+                            color: rgba(0,0,0,.7);
+                            transition: .4s;
+                            &:hover{
+                                color: #fff;
+                                background: rgba(0,0,0,.4);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     .style_area{
         display: flex;
@@ -227,7 +274,7 @@ div#{$contentsName}{
                     padding: 8px;
                     gap: 0;
 
-                    @for $i from 1 through 12 {
+                    @for $i from 1 through 20 {
                         &.width_#{$i} { width: 80% * $i; }
                      }
                 }
@@ -305,10 +352,18 @@ div#{$contentsName}{
                     grid-template-columns: repeat(2, 1fr);
                 }
                 p{
+                    background: #fff;
                     a{
-                        background: #fff;
                         display: block;
                         padding: 0 12px 12px;
+                        // height: 100%;
+                        &:nth-child(2){
+                            height: auto;
+                            text-align: right;
+                            font-size: 11px;
+                            padding: 12px;
+                            border-top: 1px dotted rgba(0,0,0,.4);
+                        }
                     }
                 }
             }

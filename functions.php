@@ -533,7 +533,7 @@ function create_styling_type() {
     )
   );
   register_taxonomy(
-    'styling_tag2',
+    'styling_items',
     'styling',
     array(
       'label' => '商品・納期タグ',

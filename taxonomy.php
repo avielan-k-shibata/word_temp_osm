@@ -1,9 +1,6 @@
 <?php
-
-/**
- * The template for displaying all single posts
- */
-
+$queried_object = get_queried_object();
+$term_id = get_queried_object_id();
 ?>
 <?php get_template_part('styling_parts/header'); ?>
 
@@ -12,7 +9,22 @@
 
 	<div class="contents_area">
 		<div class="style_title">
-			<h2>RECOMMEND STYLE</h2>
+			<?php if($queried_object->taxonomy == "styling_items") :?>
+			<h2>商品: <span><?php echo  single_term_title();?></span></h2>
+			<?php elseif ($queried_object->taxonomy == "styling_season") :?>
+			<h2>SEASON <span><?php echo  single_term_title();?></span></h2>
+			<?php elseif ($queried_object->taxonomy == "styling_model") :?>
+				<?php if($queried_object->parent) :
+					$term = get_term($queried_object->parent);
+				?>
+				<h2><?php echo $term->name;?> <span><?php echo  single_term_title();?></span></h2>
+				<?php else :?>
+				<h2><span><?php echo  single_term_title();?></span></h2>
+
+				<?php endif ?>
+			<?php elseif ($queried_object->taxonomy == "styling_tag") :?>
+			<h2>TAG <span><?php echo  single_term_title();?></span></h2>
+			<?php endif ?>
 		</div>
 		<div class="archive_area">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -71,6 +83,7 @@
 
 		</div>
 	</div>
+
 
 
 <?php get_template_part('styling_parts/footer'); ?>
