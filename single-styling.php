@@ -13,6 +13,15 @@ $tarms = get_the_terms($postid, 'styling_model');
 $tarmid = $tarms[0]->term_id;
 $model = SCF::get_term_meta($tarmid, 'styling_model');
 $tags = get_the_terms($postid, 'styling_tag');
+$parent_tarm = [];
+//画像名判別
+$img_name ="";
+if($tarms[0]->parent != null){
+	$parent_tarm = get_term($tarms[0]->parent);
+	if($parent_tarm->name != "STYLE BOOK"){
+		$img_name ="0";
+	}
+}
 
 ?>
 <?php get_template_part('styling_parts/header'); ?>
@@ -27,7 +36,11 @@ $tags = get_the_terms($postid, 'styling_tag');
 				echo '画像がありません。';
 			} elseif ($style_images > 0) {
 				for ($i = 1; $i <= $style_images; $i++) {
-					echo '<div class="tO"><img src="https://osmosis.itembox.design/item/img/' . $image_directory . '/' . $i . '.jpg"></div>' . "\n";
+					if($i < 10){
+						echo '<div class="tO"><img src="https://osmosis.itembox.design/item/img/' . $image_directory . '/' .$img_name. $i . '.jpg"></div>' . "\n";
+					}else{
+						echo '<div class="tO"><img src="https://osmosis.itembox.design/item/img/' . $image_directory . '/' . $i . '.jpg"></div>' . "\n";
+					}
 				}
 			}
 			?>
@@ -66,8 +79,10 @@ $tags = get_the_terms($postid, 'styling_tag');
 	<?php
 		$other_tarms = get_the_terms($postid, 'styling_items');
 		$other_tmid = [];
-		foreach($other_tarms as $tm){
-			$other_tmid[] = $tm->term_id;
+		if($other_tarms){
+			foreach($other_tarms as $tm){
+				$other_tmid[] = $tm->term_id;
+			}
 		}
 		$other_styles = new WP_Query(
 			array(
@@ -90,7 +105,15 @@ $tags = get_the_terms($postid, 'styling_tag');
 			<div class="other_box other_<?php echo $other_styles->post_count?>">
 				<?php while ( $other_styles->have_posts() ) : $other_styles->the_post();
 					$otherstyle_image = SCF::get('image_directory');
+					$other_id = get_the_ID();
+					$other_tarms = get_the_terms($other_id, 'styling_model');
 					$otherimg_link = 'https://osmosis.itembox.design/item/img/' . $otherstyle_image . '/1.jpg';
+					if($other_tarms[0]->parent != null){
+						$other_parent_tarm = get_term($other_tarms[0]->parent);
+						if($other_parent_tarm->name != "STYLE BOOK"){
+							$otherimg_link = 'https://osmosis.itembox.design/item/img/' . $otherstyle_image . '/01.jpg';
+						}
+					}
 					?>
 					<div>
 						<a href="<?php the_permalink(); ?>">

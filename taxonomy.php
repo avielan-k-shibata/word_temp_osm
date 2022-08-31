@@ -38,6 +38,15 @@ $term_id = get_queried_object_id();
 				$model = SCF::get_term_meta($tarmid, 'styling_model');
 				$image_directory = SCF::get('image_directory');
 				$img_link = 'https://osmosis.itembox.design/item/img/' . $image_directory . '/1.jpg';
+				//画像名判別
+				$parent_tarm = [];
+				$img_name ="";
+				if($tarms[0]->parent != null){
+					$parent_tarm = get_term($tarms[0]->parent);
+					if($parent_tarm->name != "STYLE BOOK"){
+						$img_link = 'https://osmosis.itembox.design/item/img/' . $image_directory . '/01.jpg';
+					}
+				}
 			?>
 			<?php if ($wp_query->current_post % 4 == 0) :?>
 				<div class="styling_card tO style1">

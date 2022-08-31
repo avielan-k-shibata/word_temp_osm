@@ -544,3 +544,14 @@ function create_styling_type() {
     )
   );
 }
+
+
+function twpp_change_sort_order( $query ) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+	  return;
+	}
+	//   $query->set( 'order', 'ASC' );
+	  $query->set( 'orderby', 'title' );
+  }
+  
+  add_action( 'pre_get_posts', 'twpp_change_sort_order' );
