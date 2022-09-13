@@ -18,6 +18,12 @@
         <li><a class="cart" href="/fs/osmosis/ShoppingCart.html">カート</a></li>
         <li><a href="/f/contact" class="q">お問い合わせ</a></li>
         <li>
+            <p>RECOMMEND STYLE</p>
+        </li>
+        <li><a href="/shopcoordinate/index.php/styling/">RECOMMEND TOP</a></li>
+        <li><a href="/shopcoordinate/index.php/styling_model/style-book/">STYLE BOOK</a></li>
+        <li><a href="/shopcoordinate/index.php/styling_model/catalog/">CATALOG</a></li>
+        <li>
             <p>INFORMATION</p>
         </li>
         <li><a class="info" href="/f/recruit_information">RECRUIT</a></li>

@@ -42,9 +42,8 @@ window.addEventListener("load", function () {
     if(item_credits){
         item_credits.forEach(p => {
             const a = p.childNodes;
-            console.log(a[0].pathname.substr(-10));
             var new_element = document.createElement('a');
-            new_element.textContent = 'OTHER STYLES';
+            new_element.textContent = '#この商品の他スタイル';
             const url = `/shopcoordinate/index.php/styling_items/${a[0].pathname.substr(-11)}/`
             new_element.setAttribute('href', url);
             p.appendChild(new_element);

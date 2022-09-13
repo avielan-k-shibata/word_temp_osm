@@ -202,9 +202,13 @@ div#{$contentsName}{
                             color: rgba(0,0,0,.7);
                             font-size: 12px;
                             transition: .4s;
+                            // white-space: nowrap;
                             &:hover{
                                 background: #000;
                                 color: #fff;
+                            }
+                            @include sp{
+                                font-size: 10px;
                             }
                         }
                     }
@@ -229,6 +233,11 @@ div#{$contentsName}{
                             width: 48px;
                             height: 48px;
                             border: 1px solid rgba(0,0,0,.7);
+                            @include sp{
+                                width: 40px;
+                                height: 40px;
+                                font-size: 11px;
+                            }
                         }
                         span{
                             color: #fff;
@@ -352,17 +361,20 @@ div#{$contentsName}{
                     grid-template-columns: repeat(2, 1fr);
                 }
                 p{
-                    background: #fff;
                     a{
                         display: block;
                         padding: 0 12px 12px;
                         // height: 100%;
+                        &:nth-child(1){
+                            background: #fff;
+                        }
                         &:nth-child(2){
                             height: auto;
-                            text-align: right;
+                            text-align: center;
                             font-size: 11px;
                             padding: 12px;
-                            border-top: 1px dotted rgba(0,0,0,.4);
+                            background: #fff;
+                            margin-top: 4px;
                         }
                     }
                 }
@@ -393,6 +405,8 @@ div#{$contentsName}{
                         color: rgba(0,0,0,.7);
                         font-size: 12px;
                         transition: .4s;
+                        white-space: nowrap;
+
                         &:hover{
                             background: #000;
                             color: #fff;

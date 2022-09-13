@@ -1,6 +1,29 @@
 <?php
 $queried_object = get_queried_object();
 $term_id = get_queried_object_id();
+$now_page = get_query_var( 'paged' ); 
+if($now_page == 0){
+	$offset = 0;
+}else{
+	$offset = ( $now_page - 1 ) * 30;
+}
+
+$list_styles = new WP_Query(
+	array(
+		'post_type' => 'styling',
+		'orderby' => 'meta_value_num',
+		'meta_key' => 'priority_num',
+		// 'order' => 'DESC', // 順序順で表示
+		// 'posts_per_page' => 20,
+		'tax_query' => array(
+			array(
+				'taxonomy' => $queried_object->taxonomy,
+				'terms' => $term_id,
+			),
+		),
+		'offset' => $offset
+		)
+	);
 ?>
 <?php get_template_part('styling_parts/header'); ?>
 
@@ -23,11 +46,11 @@ $term_id = get_queried_object_id();
 
 				<?php endif ?>
 			<?php elseif ($queried_object->taxonomy == "styling_tag") :?>
-			<h2>TAG <span><?php echo  single_term_title();?></span></h2>
+			<h2># <span><?php echo  single_term_title();?></span></h2>
 			<?php endif ?>
 		</div>
 		<div class="archive_area">
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<?php if ($list_styles->have_posts()) : while ($list_styles->have_posts()) : $list_styles->the_post(); ?>
 			<?php
 				// 
 				$items = SCF::get('item_detail');
@@ -48,11 +71,11 @@ $term_id = get_queried_object_id();
 					}
 				}
 			?>
-			<?php if ($wp_query->current_post % 4 == 0) :?>
+			<?php if ($list_styles->current_post % 4 == 0) :?>
 				<div class="styling_card tO style1">
-				<?php elseif ($wp_query->current_post % 4 == 1) :?>
+				<?php elseif ($list_styles->current_post % 4 == 1) :?>
 				<div class="styling_card tO style2">
-				<?php elseif ($wp_query->current_post % 4 == 2) :?>
+				<?php elseif ($list_styles->current_post % 4 == 2) :?>
 				<div class="styling_card tO style3">
 				<?php else: ?>
 				<div class="styling_card tO style4">
@@ -68,8 +91,14 @@ $term_id = get_queried_object_id();
 				<?php if ($tags) : ?>
 				<div class="style_tags">
 				<?php
-					foreach( $tags as $tag) { 
-					echo '<p><a href="'. get_tag_link($tag->term_id) .'">' . $tag->name . '</a></p>';
+					$i = 0;
+					shuffle($tags);
+					foreach( $tags as $tag) {
+						// echo $tag;
+						if($i < 2){
+							echo '<p><a href="'. get_tag_link($tag->term_id) .'">' . $tag->name .'</a></p>';
+						}
+						$i++;
 					}
 					?>
 
@@ -77,19 +106,29 @@ $term_id = get_queried_object_id();
 				<?php endif; ?>
 			</div>
 			<?php endwhile; endif; ?>
-
+			<?php  wp_reset_postdata(); ?>
 		</div>
-		<div class="pagenation">
-			<?php the_posts_pagination(
-			array(
-				'mid_size'      => 2, // 現在ページの左右に表示するページ番号の数
-				'prev_next'     => true, // 「前へ」「次へ」のリンクを表示する場合はtrue
-				'prev_text'     => __( '前へ'), // 「前へ」リンクのテキスト
-				'next_text'     => __( '次へ'), // 「次へ」リンクのテキスト
-				'type'          => 'list', // 戻り値の指定 (plain/list)
-			)
-		); ?>
 
+
+
+		
+		<div class="pagenation">
+			<div class="nav-links">
+			<?php
+			$big = 999999999;
+				echo paginate_links(array(
+					'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+					'show_all' => false,
+					'type' => 'list',
+					'format' => '?paged=%#%',
+					'current' => max(1, get_query_var('paged')),
+					'total' => $list_styles->max_num_pages,
+					'prev_text' => '前へ',
+					'next_text' => '次へ',
+				));
+			?>
+
+			</div>
 		</div>
 	</div>
 

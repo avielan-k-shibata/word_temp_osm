@@ -56,8 +56,14 @@
 				<?php if ($tags) : ?>
 				<div class="style_tags">
 				<?php
-					foreach( $tags as $tag) { 
-					echo '<p><a href="'. get_tag_link($tag->term_id) .'">' . $tag->name . '</a></p>';
+					$i = 0;
+					shuffle($tags);
+					foreach( $tags as $tag) {
+						// echo $tag;
+						if($i < 2){
+							echo '<p><a href="'. get_tag_link($tag->term_id) .'">' . $tag->name .'</a></p>';
+						}
+						$i++;
 					}
 					?>
 
@@ -70,7 +76,7 @@
 		<div class="pagenation">
 			<?php the_posts_pagination(
 			array(
-				'mid_size'      => 2, // 現在ページの左右に表示するページ番号の数
+				'mid_size'      => 1, // 現在ページの左右に表示するページ番号の数
 				'prev_next'     => true, // 「前へ」「次へ」のリンクを表示する場合はtrue
 				'prev_text'     => __( '前へ'), // 「前へ」リンクのテキスト
 				'next_text'     => __( '次へ'), // 「次へ」リンクのテキスト

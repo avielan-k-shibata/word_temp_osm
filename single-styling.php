@@ -81,7 +81,11 @@ if($tarms[0]->parent != null){
 		$other_tmid = [];
 		if($other_tarms){
 			foreach($other_tarms as $tm){
-				$other_tmid[] = $tm->term_id;
+				//納期を除外
+				$not = substr($tm->slug, 0, 1);
+				if($not != "e" && $not != "l"){
+					$other_tmid[] = $tm->term_id;
+				}
 			}
 		}
 		$other_styles = new WP_Query(

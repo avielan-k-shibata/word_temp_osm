@@ -550,8 +550,14 @@ function twpp_change_sort_order( $query ) {
 	if ( is_admin() || ! $query->is_main_query() ) {
 	  return;
 	}
-	//   $query->set( 'order', 'ASC' );
-	  $query->set( 'orderby', 'title' );
+	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'styling' ) {
+		//POST_TYPEがstylingの時のみ
+	// $query->set( 'order', 'ASC' );
+	$query->set( 'orderby', 'meta_value_num' );
+    $query->set( 'meta_key', 'priority_num' );
+	// $query->set( 'orderby', 'title' );
+	return $query;
+	}
   }
   
   add_action( 'pre_get_posts', 'twpp_change_sort_order' );

@@ -5,7 +5,7 @@
 		<li>
 			<p>RECOMMEND STYLE</p>
 			<a href="/shopcoordinate/index.php/styling/">RECOMMEND TOP</a>
-			<a href="/shopcoordinate/index.php/styling_model/style-book/">LOOK BOOK</a>
+			<a href="/shopcoordinate/index.php/styling_model/style-book/">STYLE BOOK</a>
 			<a href="/shopcoordinate/index.php/styling_model/catalog/">CATALOG</a>
 			<!-- <p>MODEL</p>
 			<a href="/shopcoordinate/">OZAWA</a> -->
