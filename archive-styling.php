@@ -14,6 +14,17 @@
 		<div class="style_title">
 			<h2>RECOMMEND STYLE</h2>
 		</div>
+		<div class="top_style_tags">
+			<a href="/shopcoordinate/index.php/styling_tag/blouse/">ブラウス　シャツ</a>
+			<a href="/shopcoordinate/index.php/styling_tag/knit/">ニット</a>
+			<a href="/shopcoordinate/index.php/styling_tag/onepiece/">ワンピース</a>
+
+			<a href="/shopcoordinate/index.php/styling_tag/black/">BLACK</a>
+			<a href="/shopcoordinate/index.php/styling_tag/mix/">MIX<span class="mix"></span></a>
+			<a href="/shopcoordinate/index.php/styling_items/late_september/">09月下旬入荷</a>
+			<a href="/shopcoordinate/index.php/styling_items/early_september/">09月上旬入荷</a>
+
+		</div>
 		<div class="archive_area">
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<?php

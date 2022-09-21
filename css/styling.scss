@@ -71,18 +71,55 @@ div#{$contentsName}{
             margin: 0;
             padding: 0;
         }
+        .top_style_tags{
+            display: flex;
+            white-space: nowrap;
+            padding: 12px 0 ;
+            width: 100%;
+            @include tab{
+                overflow-x: scroll;
+                padding: 12px 0 12px 12px;
+
+            }
+            a{
+                &::before{
+                    content: "#";
+                    display: inline-block;
+                    margin-right: 2px;
+                }
+                display: inline-block;
+                border-radius: 12px;
+                background: #fff;
+                padding: 2px 8px;
+                color: rgba(0,0,0,.7);
+                font-size: 12px;
+                transition: .4s;
+                margin-right: 12px;
+            }
+        }
         .style_title{
             h2{
-                margin: 0 0 32px 0;
+                margin: 0;
                 padding: 16px;
                 background: #fff;
+                display: flex;
+                align-items: center;
+                font-size: 18px;
                 @include tab{
-                    margin: 0 0 24px 0;
                     padding: 12px;
                 }
                 @include sp{
-                    margin: 0 0 16px 0;
                     padding: 8px;
+                }
+                span{
+                    font-weight: 700;
+                    display: inline-block;
+                    margin-left: 12px;
+                }
+                a{
+                    font-size: 14px;
+                    display: inline-block;
+                    margin-left: 12px;
                 }
             }
         }
@@ -186,6 +223,11 @@ div#{$contentsName}{
                     left: 0;
                     display: flex;
                     padding: 2px;
+                    width: 100%;
+                    white-space: nowrap;
+                    @include sp{
+                        overflow-x: scroll;
+                    }
                     p{
                         padding: 2px;
 
@@ -456,7 +498,7 @@ div#{$contentsName}{
             gap: 24px;
             @include tab{
                 @for $i from 1 through 12 {
-                    &.other_#{$i} { width: 35% * $i; }
+                    &.other_#{$i} { width: 40% * $i; }
                  }
                 display: flex;
             }
@@ -520,6 +562,118 @@ div.drawerbox{
         ul{
             position: relative;
             z-index: 2;
+            li{
+                div.scroll_menu
+                {
+                    display: flex;
+                    overflow: scroll;
+                    white-space: nowrap;
+                    background-color: #ededed;
+                    padding: 12px;
+                    a{
+                        padding: 2px 12px;
+                        background-color: #fff;
+                        border: none;
+                        border-radius: 12px;
+                        margin-right: 12px;
+                        &::before{
+                            content: "#";
+                        }
+                        &::after{
+                            display: none;
+                        }
+                    }
+                }
+                div.color_menu{
+                    padding: 12px ;
+                    div.color_btn{
+                        display: flex;
+                        flex-wrap: wrap;
+                        a{
+                            width: 20%;
+                            border: none;
+                            &::after{
+                                display: none;
+                            }
+                            width: 20%;
+                        height: 38px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0;
+                        span{
+                            background: #ddd;
+                            display: block;
+                            height: 26px;
+                            width: 26px;
+                            border-radius: 50%;
+                            &.white{
+                                border: 1px solid #ddd;
+                                background: #fff;
+                            }
+                            &.black{
+                                background: #000;
+                            }
+                            &.yellow{
+                                background: #fcb900;
+                            }
+                            &.green{
+                                background: #00d084;;
+                            }
+                            &.blue{
+                                background: #0693e3;
+                            }
+                            &.purple{
+                                background: #9b51e0;
+                            }
+                            &.gray{
+                                background: #948d9f;
+                            }
+                            &.beige{
+                                background: #968a88;
+                            }
+                            &.brown{
+                                background: #c48e6c;
+                            }
+                            &.red{
+                                background: #cf2e2e;
+                            }
+                            &.khaki{
+                                background: #9d9b8e;
+                            }
+                            &.mix{
+                                background: url("https://store.osmosis.co.jp/shopcoordinate/wp-content/themes/gk-portfolio/img/bg/chip.jpg");
+                                background-size: 100%;
+                            }
+                            &.navy{
+                                background: #24295d;
+                            }
+                            &.camel{
+                                background: #ee9b2c;
+                            }
+                            &.charcoal{
+                                background: #545963;
+                            }
+                            &.ivory{
+                                background: #f2e9e1;
+                            }
+                            &.pink{
+                                background: #c243af;
+                            }
+                            &.wine{
+                                background: #87568a;
+                            }
+                            &.l-beige{
+                                background: #d5ccc6;
+                            }
+                            &.l-green{
+                                background: #e2ded6;
+                            }
+                        }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -552,4 +706,119 @@ div.footer2018 ul{
         width: 100%;
     }
 
+}
+div.leftmenu2022{
+    ul{
+        li{
+            p.acordion_btn{
+                cursor: pointer;
+                position: relative;
+                border: none ;
+                font-weight: 500;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 35%;
+                    right: 5%;
+                    width: 8px;
+                    height: 8px;
+                    transform: rotate(45deg);
+                    border-right: 1px solid #ccc;
+                    border-bottom: 1px solid #ccc;
+                } 
+            }
+            div.acordion_menu{
+                display: block;
+                overflow: hidden;
+                transition: .4s;
+                height: 0;
+                div.color_btn{
+                    display: flex;
+                    flex-wrap: wrap;
+                    a{
+                        width: 20%;
+                        height: 38px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        span{
+                            background: #ddd;
+                            display: block;
+                            height: 26px;
+                            width: 26px;
+                            border-radius: 50%;
+                            &.white{
+                                border: 1px solid #ddd;
+                                background: #fff;
+                            }
+                            &.black{
+                                background: #000;
+                            }
+                            &.yellow{
+                                background: #fcb900;
+                            }
+                            &.green{
+                                background: #00d084;;
+                            }
+                            &.blue{
+                                background: #0693e3;
+                            }
+                            &.purple{
+                                background: #9b51e0;
+                            }
+                            &.gray{
+                                background: #948d9f;
+                            }
+                            &.beige{
+                                background: #968a88;
+                            }
+                            &.brown{
+                                background: #c48e6c;
+                            }
+                            &.red{
+                                background: #cf2e2e;
+                            }
+                            &.khaki{
+                                background: #9d9b8e;
+                            }
+                            &.mix{
+                                background: url("https://store.osmosis.co.jp/shopcoordinate/wp-content/themes/gk-portfolio/img/bg/chip.jpg");
+                                background-size: 100%;
+                            }
+                            &.navy{
+                                background: #24295d;
+                            }
+                            &.camel{
+                                background: #ee9b2c;
+                            }
+                            &.charcoal{
+                                background: #545963;
+                            }
+                            &.ivory{
+                                background: #f2e9e1;
+                            }
+                            &.pink{
+                                background: #c243af;
+                            }
+                            &.wine{
+                                background: #87568a;
+                            }
+                            &.l-beige{
+                                background: #d5ccc6;
+                            }
+                            &.l-green{
+                                background: #e2ded6;
+                            }
+                        }
+                    }
+                }
+            }
+            a{
+                &.c_title{
+                    padding-left: 12px;
+                }
+            }
+
+        }
+    }
 }

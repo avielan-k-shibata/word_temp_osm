@@ -33,24 +33,75 @@ div.styling_contents .contents_area p {
   padding: 0;
 }
 
+div.styling_contents .contents_area .top_style_tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  white-space: nowrap;
+  padding: 12px 0;
+  width: 100%;
+}
+
+@media (max-width: 810px) {
+  div.styling_contents .contents_area .top_style_tags {
+    overflow-x: scroll;
+    padding: 12px 0 12px 12px;
+  }
+}
+
+div.styling_contents .contents_area .top_style_tags a {
+  display: inline-block;
+  border-radius: 12px;
+  background: #fff;
+  padding: 2px 8px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 12px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  margin-right: 12px;
+}
+
+div.styling_contents .contents_area .top_style_tags a::before {
+  content: "#";
+  display: inline-block;
+  margin-right: 2px;
+}
+
 div.styling_contents .contents_area .style_title h2 {
-  margin: 0 0 32px 0;
+  margin: 0;
   padding: 16px;
   background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
 }
 
 @media (max-width: 810px) {
   div.styling_contents .contents_area .style_title h2 {
-    margin: 0 0 24px 0;
     padding: 12px;
   }
 }
 
 @media (max-width: 640px) {
   div.styling_contents .contents_area .style_title h2 {
-    margin: 0 0 16px 0;
     padding: 8px;
   }
+}
+
+div.styling_contents .contents_area .style_title h2 span {
+  font-weight: 700;
+  display: inline-block;
+  margin-left: 12px;
+}
+
+div.styling_contents .contents_area .style_title h2 a {
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 12px;
 }
 
 div.styling_contents .contents_area .archive_area {
@@ -240,6 +291,14 @@ div.styling_contents .contents_area .archive_area .styling_card div.style_tags {
   display: -ms-flexbox;
   display: flex;
   padding: 2px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  div.styling_contents .contents_area .archive_area .styling_card div.style_tags {
+    overflow-x: scroll;
+  }
 }
 
 div.styling_contents .contents_area .archive_area .styling_card div.style_tags p {
@@ -687,40 +746,40 @@ div.styling_contents .other_area .other_box {
     display: flex;
   }
   div.styling_contents .other_area .other_box.other_1 {
-    width: 35%;
+    width: 40%;
   }
   div.styling_contents .other_area .other_box.other_2 {
-    width: 70%;
+    width: 80%;
   }
   div.styling_contents .other_area .other_box.other_3 {
-    width: 105%;
+    width: 120%;
   }
   div.styling_contents .other_area .other_box.other_4 {
-    width: 140%;
+    width: 160%;
   }
   div.styling_contents .other_area .other_box.other_5 {
-    width: 175%;
+    width: 200%;
   }
   div.styling_contents .other_area .other_box.other_6 {
-    width: 210%;
+    width: 240%;
   }
   div.styling_contents .other_area .other_box.other_7 {
-    width: 245%;
-  }
-  div.styling_contents .other_area .other_box.other_8 {
     width: 280%;
   }
+  div.styling_contents .other_area .other_box.other_8 {
+    width: 320%;
+  }
   div.styling_contents .other_area .other_box.other_9 {
-    width: 315%;
+    width: 360%;
   }
   div.styling_contents .other_area .other_box.other_10 {
-    width: 350%;
+    width: 400%;
   }
   div.styling_contents .other_area .other_box.other_11 {
-    width: 385%;
+    width: 440%;
   }
   div.styling_contents .other_area .other_box.other_12 {
-    width: 420%;
+    width: 480%;
   }
 }
 
@@ -801,6 +860,155 @@ div.drawerbox nav ul {
   z-index: 2;
 }
 
+div.drawerbox nav ul li div.scroll_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: scroll;
+  white-space: nowrap;
+  background-color: #ededed;
+  padding: 12px;
+}
+
+div.drawerbox nav ul li div.scroll_menu a {
+  padding: 2px 12px;
+  background-color: #fff;
+  border: none;
+  border-radius: 12px;
+  margin-right: 12px;
+}
+
+div.drawerbox nav ul li div.scroll_menu a::before {
+  content: "#";
+}
+
+div.drawerbox nav ul li div.scroll_menu a::after {
+  display: none;
+}
+
+div.drawerbox nav ul li div.color_menu {
+  padding: 12px;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a {
+  width: 20%;
+  border: none;
+  width: 20%;
+  height: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a::after {
+  display: none;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span {
+  background: #ddd;
+  display: block;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.white {
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.black {
+  background: #000;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.yellow {
+  background: #fcb900;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.green {
+  background: #00d084;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.blue {
+  background: #0693e3;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.purple {
+  background: #9b51e0;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.gray {
+  background: #948d9f;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.beige {
+  background: #968a88;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.brown {
+  background: #c48e6c;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.red {
+  background: #cf2e2e;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.khaki {
+  background: #9d9b8e;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.mix {
+  background: url("https://store.osmosis.co.jp/shopcoordinate/wp-content/themes/gk-portfolio/img/bg/chip.jpg");
+  background-size: 100%;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.navy {
+  background: #24295d;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.camel {
+  background: #ee9b2c;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.charcoal {
+  background: #545963;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.ivory {
+  background: #f2e9e1;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.pink {
+  background: #c243af;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.wine {
+  background: #87568a;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.l-beige {
+  background: #d5ccc6;
+}
+
+div.drawerbox nav ul li div.color_menu div.color_btn a span.l-green {
+  background: #e2ded6;
+}
+
 div.overlay {
   position: fixed;
   top: 0;
@@ -829,5 +1037,149 @@ div.ovserber_target {
   div.footer2018 ul {
     width: 100%;
   }
+}
+
+div.leftmenu2022 ul li p.acordion_btn {
+  cursor: pointer;
+  position: relative;
+  border: none;
+  font-weight: 500;
+}
+
+div.leftmenu2022 ul li p.acordion_btn::after {
+  content: "";
+  position: absolute;
+  top: 35%;
+  right: 5%;
+  width: 8px;
+  height: 8px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+div.leftmenu2022 ul li div.acordion_menu {
+  display: block;
+  overflow: hidden;
+  -webkit-transition: .4s;
+  transition: .4s;
+  height: 0;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a {
+  width: 20%;
+  height: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span {
+  background: #ddd;
+  display: block;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.white {
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.black {
+  background: #000;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.yellow {
+  background: #fcb900;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.green {
+  background: #00d084;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.blue {
+  background: #0693e3;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.purple {
+  background: #9b51e0;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.gray {
+  background: #948d9f;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.beige {
+  background: #968a88;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.brown {
+  background: #c48e6c;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.red {
+  background: #cf2e2e;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.khaki {
+  background: #9d9b8e;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.mix {
+  background: url("https://store.osmosis.co.jp/shopcoordinate/wp-content/themes/gk-portfolio/img/bg/chip.jpg");
+  background-size: 100%;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.navy {
+  background: #24295d;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.camel {
+  background: #ee9b2c;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.charcoal {
+  background: #545963;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.ivory {
+  background: #f2e9e1;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.pink {
+  background: #c243af;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.wine {
+  background: #87568a;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.l-beige {
+  background: #d5ccc6;
+}
+
+div.leftmenu2022 ul li div.acordion_menu div.color_btn a span.l-green {
+  background: #e2ded6;
+}
+
+div.leftmenu2022 ul li a.c_title {
+  padding-left: 12px;
 }
 /*# sourceMappingURL=styling.css.map */

@@ -17,17 +17,87 @@
         <li><a class="login" href="/fs/osmosis/Login.html">ログイン</a></li>
         <li><a class="cart" href="/fs/osmosis/ShoppingCart.html">カート</a></li>
         <li><a href="/f/contact" class="q">お問い合わせ</a></li>
-        <li>
-            <p>RECOMMEND STYLE</p>
-        </li>
-        <li><a href="/shopcoordinate/index.php/styling/">RECOMMEND TOP</a></li>
-        <li><a href="/shopcoordinate/index.php/styling_model/style-book/">STYLE BOOK</a></li>
-        <li><a href="/shopcoordinate/index.php/styling_model/catalog/">CATALOG</a></li>
+<li>
+			<p>RECOMMEND STYLE</p>
+			<a href="/shopcoordinate/index.php/styling/">RECOMMEND TOP</a>
+			<a href="/shopcoordinate/index.php/styling_model/style-book/">STYLE BOOK</a>
+            <div class="scroll_menu">
+                <a class="c_title" href="/shopcoordinate/index.php/styling_model/2022-oct-vol-02/">2022 OCT vol.02</a>
+                <a class="c_title" href="/shopcoordinate/index.php/styling_model/2022-oct-vol-01/">2022 OCT vol.01</a>
+                <a class="c_title" href="/shopcoordinate/index.php/styling_model/2022-sep-vol-02/">2022 SEP vol.02</a>
+                
+                <a class="c_title" href="/shopcoordinate/index.php/styling_model/2022-sep-vol-01/">2022 SEP vol.01</a>
+                <a class="c_title" href="/shopcoordinate/index.php/styling_model/2022-aug-vol-02/">2022 AUG vol.02</a>
+                <a class="c_title" href="/shopcoordinate/index.php/styling_model/2022-aug-vol-01/">2022 AUG vol.01</a>
+                <a class="c_title" href="/shopcoordinate/index.php/styling_model/2022-jul-vol-02/">2022 JUL vol.02</a>
+                <a class="c_title" href="/shopcoordinate/index.php/styling_model/2022-jul-vol-01/">2022 JUL vol.01</a>
+			</div>
+			<a href="/shopcoordinate/index.php/styling_model/catalog/">CATALOG</a>
+            <div class="scroll_menu">
+
+                <a class="c_title" href="/shopcoordinate/index.php/styling_model/2022aw-vol-02/">2022AW vol.02</a>
+                <a class="c_title" href="/shopcoordinate/index.php/styling_model/2022aw-vol-01/">2022AW vol.01</a>
+                <a class="c_title" href="/shopcoordinate/index.php/styling_model/2022ss-vol-01/">2022SS vol.01</a>
+			</div>
+            <a href="/shopcoordinate/index.php/styling_model/ozawa/">OZAWA'S STYLE</a>
+			<p>COLOR</p>
+			<div class="color_menu">
+				<div class="color_btn">
+					<a href="/shopcoordinate/index.php/styling_tag/white/"><span class="white"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/black/"><span class="black"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/charcoal/"><span  class="charcoal"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/gray/"><span class="gray"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/mix/"><span class="mix"></span></a>
+				</div>
+				<div class="color_btn">
+					<a href="/shopcoordinate/index.php/styling_tag/khaki/"><span class="khaki"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/green/"><span class="green"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/l-green/"><span  class="l-green"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/blue/"><span class="blue"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/navy/"><span class="navy"></span></a>
+				</div>
+				<div class="color_btn">
+					<a href="/shopcoordinate/index.php/styling_tag/purple/"><span class="purple"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/yellow/"><span class="yellow"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/camel/"><span class="camel"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/brown/"><span class="brown"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/pink/"><span class="pink"></span></a>
+				</div>
+				<div class="color_btn">
+					<a href="/shopcoordinate/index.php/styling_tag/red/"><span  class="red"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/wine/"><span class="wine"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/ivory/"><span class="ivory"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/beige/"><span class="beige"></span></a>
+					<a href="/shopcoordinate/index.php/styling_tag/l-beige/"><span class="l-beige"></span></a>
+				</div>
+			</div>
+			<p >納期</p>
+			<div class="scroll_menu">
+			<a href="/shopcoordinate/index.php/styling_items/late_october/">10月下旬入荷</a>
+			<a href="/shopcoordinate/index.php/styling_items/early_october/">10月上旬入荷</a>
+			<a href="/shopcoordinate/index.php/styling_items/late_september/">09月下旬入荷</a>
+			<a href="/shopcoordinate/index.php/styling_items/early_september/">09月上旬入荷</a>
+			</div>
+			<p >カテゴリー</p>
+			<div class="scroll_menu">
+			<a href="/shopcoordinate/index.php/styling_tag/tshirts/">Tシャツ・カットソー</a>
+			<a href="/shopcoordinate/index.php/styling_tag/blouse/">ブラウス　シャツ</a>
+			<a href="/shopcoordinate/index.php/styling_tag/knit/">ニット</a>
+			<a href="/shopcoordinate/index.php/styling_tag/onepiece/">ワンピース</a>
+			<a href="/shopcoordinate/index.php/styling_tag/pants/">パンツ</a>
+			<a href="/shopcoordinate/index.php/styling_tag/skirt/">スカート</a>
+			<a href="/shopcoordinate/index.php/styling_tag/outer/">アウター</a>
+			<a href="/shopcoordinate/index.php/styling_tag/shoes/">シューズ</a>
+			<a href="/shopcoordinate/index.php/styling_tag/accessories/">ファッション雑貨</a>
+			</div>
+			<!-- <p>MODEL</p>
+			<a href="/shopcoordinate/">OZAWA</a> -->
+		</li>
         <li>
             <p>INFORMATION</p>
         </li>
         <li><a class="info" href="/f/recruit_information">RECRUIT</a></li>
-        <li><a class="coord" href="/contents/coordinate">コーディネート</a></li>
+        <li><a class="coord" href="/shopcoordinate/">SHOP COORDINATE</a></li>
 
         <li>
             <p>カテゴリーからを探す</p>

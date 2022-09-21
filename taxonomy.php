@@ -7,7 +7,6 @@ if($now_page == 0){
 }else{
 	$offset = ( $now_page - 1 ) * 30;
 }
-
 $list_styles = new WP_Query(
 	array(
 		'post_type' => 'styling',
@@ -33,7 +32,14 @@ $list_styles = new WP_Query(
 	<div class="contents_area">
 		<div class="style_title">
 			<?php if($queried_object->taxonomy == "styling_items") :?>
-			<h2>商品: <span><?php echo  single_term_title();?></span></h2>
+			<h2>
+				商品: <span><?php echo  single_term_title();?></span>
+				<?php
+				$not = substr($queried_object->slug, 0, 1);
+				if($not != "e" && $not != "l") :?>
+				<a href="/fs/osmosis/<?php echo  single_term_title();?>">商品詳細はこちら</a>
+				<?php endif ?>
+			</h2>
 			<?php elseif ($queried_object->taxonomy == "styling_season") :?>
 			<h2>SEASON <span><?php echo  single_term_title();?></span></h2>
 			<?php elseif ($queried_object->taxonomy == "styling_model") :?>
@@ -48,6 +54,17 @@ $list_styles = new WP_Query(
 			<?php elseif ($queried_object->taxonomy == "styling_tag") :?>
 			<h2># <span><?php echo  single_term_title();?></span></h2>
 			<?php endif ?>
+		</div>
+		<div class="top_style_tags">
+			<a href="/shopcoordinate/index.php/styling_tag/blouse/">ブラウス　シャツ</a>
+			<a href="/shopcoordinate/index.php/styling_tag/knit/">ニット</a>
+			<a href="/shopcoordinate/index.php/styling_tag/onepiece/">ワンピース</a>
+
+			<a href="/shopcoordinate/index.php/styling_tag/black/">BLACK</a>
+			<a href="/shopcoordinate/index.php/styling_tag/mix/">MIX<span class="mix"></span></a>
+			<a href="/shopcoordinate/index.php/styling_items/late_september/">09月下旬入荷</a>
+			<a href="/shopcoordinate/index.php/styling_items/early_september/">09月上旬入荷</a>
+
 		</div>
 		<div class="archive_area">
 			<?php if ($list_styles->have_posts()) : while ($list_styles->have_posts()) : $list_styles->the_post(); ?>
@@ -127,8 +144,19 @@ $list_styles = new WP_Query(
 					'next_text' => '次へ',
 				));
 			?>
-
 			</div>
+			<script>
+				const nav_link = document.querySelectorAll(".nav-links ul li a")
+				if(nav_link.length > 0){
+					nav_link.forEach(e => {
+						const link = e.href.substr(-3)
+						const newlink = e.href.slice(0,e.href.length - 7)
+						if(link === "/1/"){
+							e.href = newlink
+						}
+					});
+				}
+			</script>
 		</div>
 	</div>
 

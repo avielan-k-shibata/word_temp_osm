@@ -56,7 +56,7 @@
                 <span class="sr-only">toggle navigation</span>
                 <span class="drawer-hamburger-icon"></span>
             </button>
-            <h1 class="logo"><a href="/sp"><img src="/company/wp-content/themes/gk-portfolio/img/top/logo.png" alt="OSMOSIS loaf" /></a></h1>
+            <h1 class="logo"><a href="/"><img src="/company/wp-content/themes/gk-portfolio/img/top/logo.png" alt="OSMOSIS loaf" /></a></h1>
 
             <div class="cart2018">
                 <a href="/fs/osmosis/ShoppingCart.html"><img src="/company/wp-content/themes/gk-portfolio/img/top/cart.png" alt="OSMOSIS loaf" /></a>
